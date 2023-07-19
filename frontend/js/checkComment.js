@@ -32,6 +32,7 @@ export default async function checkCommentReplied(commentId, accessToken) {
     } else {
       console.log('На комментарий ещё не было ответа');
       const generatedReply = await generateCommentReplyAPI(replyText);
+      console.log('generatedReply' + generatedReply)
       sendCommentReply(commentId, accessToken, generatedReply);
       decreasePendingCommentCount();
       const toast = document.getElementById('toast2');

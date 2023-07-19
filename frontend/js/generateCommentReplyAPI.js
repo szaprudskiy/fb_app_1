@@ -10,6 +10,7 @@ export default async function generateCommentReplyAPI(message) {
       });
 
       const data = await response.json();
+      console.log(data)
       return data.reply;
     } catch (error) {
       console.error('Ошибка при запросе к серверу:', error);
