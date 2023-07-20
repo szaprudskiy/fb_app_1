@@ -13,14 +13,14 @@
 
     if (data.data && data.data.length > 0) {
       let pendingCount = await getPendingCommentCount();
-      
+
       for (const comment of data.data) {
         const commentText = comment.message;
         const commentAuthor = comment.from.name;
 
         const commentElement = document.createElement('div');
         commentElement.classList.add("my-class");
-        commentElement.textContent = `${commentAuthor}: ${commentText}`;
+        commentElement.textContent = `${commentAuthor ? commentAuthor : 'Анонимный пользователь'}: ${commentText}`;
 
         const replyButton = document.createElement('button');
         replyButton.style.display = 'block'
